@@ -1,6 +1,7 @@
 import React from 'react'
 import { posts } from '../data/data'
 import styles from '../page.module.css'
+import Link from 'next/link';
 
 export async function generateStaticParams() {
     const ids : string[] = [ "1", "2"];
@@ -26,6 +27,7 @@ export default async function Posts({params}: {params : {id: string}}) {
         <div className={styles.center}>
             <h2>{post?.date}</h2>
         </div>
+        <Link href={'/'}>Back to Home</Link>
     </main>
     </>
   )
